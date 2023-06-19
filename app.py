@@ -37,6 +37,8 @@ for url in urls:
   for row in rows:
     columns = row.find_all("td")
     
+    # Remove wikipedia note marks
+    columns[0] = columns[0].find("i")
     # Get text only elements
     columns = [i.text.strip() for i in columns]
     # Add extra columns in case of bad table format
